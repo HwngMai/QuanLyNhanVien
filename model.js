@@ -20,4 +20,17 @@ function NhanVien(taiKhoan, ten, email, matKhau, date, luong, chucVu, gioLam) {
       return this.luong;
     }
   };
+  this.xepLoai = function () {
+    if (this.gioLam >= 192) {
+      return "Xuất sắc";
+    }
+    if (this.gioLam >= 176) {
+      return "Giỏi";
+    }
+    if (this.gioLam >= 160) {
+      return "Khá";
+    } else {
+      return "Trung bình";
+    }
+  };
 }

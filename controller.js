@@ -39,7 +39,7 @@ function renderDSNV(nvArr) {
       <td>${nv.date}</td>
       <td>${nv.chucVu}</td>
       <td>${nv.tongLuong()}</td>
-      <td>0</td>
+      <td>${nv.xepLoai()}</td>
       <td><button onclick="xoaNhanVien('${
         nv.taiKhoan
       }')" class='btn btn-danger'>Xóa</button></td>
