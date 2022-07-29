@@ -38,10 +38,14 @@ function renderDSNV(nvArr) {
       <td>${nv.email}</td>
       <td>${nv.date}</td>
       <td>${nv.chucVu}</td>
+      <td>${nv.tongLuong()}</td>
       <td>0</td>
-      <td>0</td>
-      <td><button onclick="xoaNhanVien('${nv.taiKhoan}')" class='btn btn-danger'>Xóa</button></td>
-      <td><button onclick="suaNhanVien('${nv.taiKhoan}');" class='btn btn-warning'>Sửa</button></td>
+      <td><button onclick="xoaNhanVien('${
+        nv.taiKhoan
+      }')" class='btn btn-danger'>Xóa</button></td>
+      <td><button onclick="suaNhanVien('${
+        nv.taiKhoan
+      }');" class='btn btn-warning'>Sửa</button></td>
       </tr>`;
     //   <td>${nv.tongLuong()}</td>
     //   <td>${nv.xepLoai()}</td>
