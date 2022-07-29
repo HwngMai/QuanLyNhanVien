@@ -51,7 +51,7 @@ function renderDSNV(nvArr) {
   //xuất ra bảng id tbodySinhVien
   document.getElementById("tableDanhSach").innerHTML = contentHTML;
 }
-//FUNC Close form
+//**FUNC Close form */
 function closeForm(id) {
   $(document.getElementById(id)).attr("data-dismiss", "modal");
 }
@@ -131,6 +131,15 @@ function checkIsValid(nv) {
       "tbGiolam",
       "Vui lòng nhập giờ làm từ 80 - 200 giờ"
     );
-  // validation.kiemTraTrung(sv.ma, "spanMaSV", "Mã sinh viên bị trùng");
   return isValid;
+}
+//**FUNCTION reset thông tin */
+function resetInput() {
+  document.getElementById("tknv").value = "";
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
+  document.getElementById("luongCB").value = "";
+  document.getElementById("chucvu").value = "";
+  document.getElementById("gioLam").value = "";
 }

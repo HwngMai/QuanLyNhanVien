@@ -35,7 +35,7 @@ function themNV() {
     // Kiểm tra trùng
     validation.kiemTraTrung(
       newNv.taiKhoan,
-      "tbTaiKhoan",
+      "tbTKNV",
       "Tài khoản nhân viên bị trùng"
     );
   console.log("isValid: ", isValid);
@@ -50,6 +50,7 @@ function themNV() {
     localStorage.setItem("DSNV", dsnvJson);
     //RENDER dsnv
     renderDSNV(dsnv);
+    resetInput();
     closeForm("btnThemNV");
     //   resetInput();
   }

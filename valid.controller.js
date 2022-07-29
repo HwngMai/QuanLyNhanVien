@@ -60,6 +60,7 @@ var validation = {
       document.getElementById(idError).innerHTML = mess;
       return false;
     } else {
+      document.getElementById(idError).innerHTML = "";
       return true;
     }
   },
@@ -91,8 +92,10 @@ var validation = {
         document.getElementById(idError).innerHTML = mess;
         // Trả về false
         return false;
+      } else {
+        document.getElementById(idError).innerHTML = "";
+        return true;
       }
     }
-    return true;
   },
 };
