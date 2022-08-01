@@ -187,3 +187,9 @@ function showThongTin(nv) {
   document.getElementById("chucvu").value = nv.chucVu;
   document.getElementById("gioLam").value = nv.gioLam;
 }
+//FUNCTION reset input và btn khi mở model thêm nv
+function openReset() {
+  togEnable("tknv");
+  togEnable("btnThemNV");
+  togDisable("btnCapNhat");
+}
