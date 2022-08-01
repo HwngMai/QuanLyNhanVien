@@ -53,7 +53,6 @@ function themNV() {
     renderDSNV(dsnv);
     resetInput();
     closeForm("btnThemNV");
-    //   resetInput();
   }
 }
 //**FUNCTION XÓA NHÂN VIÊN */
@@ -86,5 +85,38 @@ function suaNhanVien(taiKhoan) {
     togDisable("tknv");
     togDisable("btnThemNV");
     togEnable("btnCapNhat");
+  }
+}
+//FUNCTION** Cập nhật thông tin
+function capNhatNV() {
+  let taiKhoan = document.getElementById("tknv").value;
+  //lấy index mảng chứa id đó
+  var index = timKiemViTri(taiKhoan, dsnv);
+  //Tạo biến mảng dummy - xóa mảng cũ gán mảng mới
+  var editNv = layThongTinTuForm();
+  //Validation input editSv
+  var isValid = checkIsValid(editNv);
+  // validation.kiemTraTrung(editSv.ma, "spanMaSV", "Mã sinh viên bị trùng");
+  // Nếu true
+  if (isValid) {
+    //cắt bỏ mảng cũ chèn mảng editsv vào vị trí index
+    dsnv.splice(index, 1, editNv);
+    alert("Cập nhật thành công");
+
+    //mở disable input id
+    togEnable("tknv");
+    togEnable("btnThemNV");
+    togDisable("btnCapNhat");
+
+    //Lưu lại dssv vào biến JSON
+    var dsnvJson = JSON.stringify(dsnv);
+    //Lưu JSON vào localStorage
+    localStorage.setItem("DSNV", dsnvJson);
+    //lấy lại mảng dssv
+    renderDSNV(dsnv);
+    //Reset input
+    resetInput();
+    //Closeform
+    closeForm();
   }
 }

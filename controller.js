@@ -60,10 +60,14 @@ function renderDSNV(nvArr) {
 function closeForm(id) {
   $(document.getElementById(id)).attr("data-dismiss", "modal");
 }
-//**FUNC Open form */
-function openForm(id) {
-  $(document.getElementById(id)).attr("data-toggle", "modal");
+function closeForm() {
+  $("#myModal").modal("hide");
 }
+//**FUNC Open form */
+function openForm() {
+  $("#myModal").modal("show");
+}
+
 //**FUNC kiểm tra valid */
 function checkIsValid(nv) {
   var isValid =
