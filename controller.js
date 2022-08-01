@@ -193,3 +193,41 @@ function openReset() {
   togEnable("btnThemNV");
   togDisable("btnCapNhat");
 }
+//FUNCTION Tìm kiếm xếp loại
+//input gồm: 1. loại cần tìm 2. mảng
+//output: mảng gồm nv xếp loại cần tìm
+function timKiemXepLoai(xepLoaiCanTim, dsnvCanTim) {
+  let nvXepLoaiArr = [];
+  for (i = 0; i < dsnvCanTim.length; i++) {
+    // tạo biến nv gán bằng biến nv index = i trong mảng dsnv (dsnv[i])
+    let nv = dsnvCanTim[i];
+    // Nếu nv.xepLoai == xepLoaiCanTim => push vào nvXepLoaiArr;
+    if (nv.xepLoai() == xepLoaiCanTim) {
+      nvXepLoaiArr.push(nv);
+    }
+  }
+  // Nếu nv.ma != taiKhoan trả về giá trị -1
+  return nvXepLoaiArr;
+}
+function renderDSNVxepLoai(nvXepLoaiArr) {
+  // Tạo biến chứa giá trị HTML
+  var contentHTML = "";
+  // duyệt các obj sv trong mảng dssv
+  for (i = 0; i < nvXepLoaiArr.length; i++) {
+    //gọi các thuộc tính trong obj sinh viên gán vào 1 biến sv sử dụng trong vòng lặp
+    var nv = nvXepLoaiArr[i];
+    //tạo biến thẻ tr chứa các thông tin cần xuất. gán các thuộc tính gọi từ obj sinh viên
+    var trContent = `<tr>
+      <td>${nv.taiKhoan}</td>
+      <td>${nv.ten}</td>
+      <td>${nv.email}</td>
+      <td>${nv.date}</td>
+      <td>${nv.chucVu}</td>
+      <td>${nv.tongLuong()}</td>
+      <td>${nv.xepLoai()}</td>`;
+    //thêm giá trị vào biến
+    contentHTML += trContent;
+  }
+  //xuất ra bảng id tbodySinhVien
+  document.getElementById("tableDanhSachXepLoai").innerHTML = contentHTML;
+}

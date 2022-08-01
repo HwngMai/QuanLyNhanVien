@@ -120,4 +120,9 @@ function capNhatNV() {
     closeForm();
   }
 }
-
+//FUNCTION show xếp loại
+function showXepLoai() {
+  let xepLoai = document.getElementById("inputXepLoai").value;
+  let nvXepLoaiArr = timKiemXepLoai(xepLoai, dsnv);
+  renderDSNVxepLoai(nvXepLoaiArr);
+}
