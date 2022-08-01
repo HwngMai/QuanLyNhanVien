@@ -147,3 +147,16 @@ function resetInput() {
   document.getElementById("chucvu").value = "";
   document.getElementById("gioLam").value = "";
 }
+//FUNCTION Tìm kiếm vị trí
+function timKiemViTri(taiKhoan, dsnv) {
+  for (i = 0; i < dsnv.length; i++) {
+    // tạo biến nv gán bằng biến nv index = i trong mảng dsnv (dsnv[i])
+    var nv = dsnv[i];
+    // Nếu nv.ma == taiKhoan trả về giá trị i
+    if (nv.taiKhoan == taiKhoan) {
+      return i;
+    }
+  }
+  // Nếu nv.ma != taiKhoan trả về giá trị -1
+  return -1;
+}

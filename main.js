@@ -43,6 +43,7 @@ function themNV() {
   if (isValid == true) {
     //Đẩy từng giá trị của biến newNv vào mảng Dssv
     dsnv.push(newNv);
+    console.log("newNv: ", newNv);
     console.log("dsnv: ", dsnv);
     //TẠO JSON
     var dsnvJson = JSON.stringify(dsnv);
@@ -55,4 +56,19 @@ function themNV() {
     //   resetInput();
   }
 }
-// }
+//**FUNCTION XÓA NHÂN VIÊN */
+function xoaNhanVien(taiKhoan) {
+  //Tìm index của nv trong mảng dsnv
+  var index = timKiemViTri(taiKhoan, dsnv);
+  //Kiểm tra lại index khác -1 thì xóa
+  if (index != -1) {
+    // Xóa tại vị trí index vừa tìm được
+    dsnv.splice(index, 1);
+    //render lại dssv
+    renderDSNV(dsnv);
+    //Lưu lại vào JSON
+    var dsnvJson = JSON.stringify(dsnv);
+    //Lưu JSON vào localStorage
+    localStorage.setItem("DSNV", dsnvJson);
+  }
+}
