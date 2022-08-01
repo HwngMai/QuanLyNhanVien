@@ -93,7 +93,6 @@ var validation = {
         // Trả về false
         return false;
       } else {
-        document.getElementById(idError).innerHTML = "";
         return true;
       }
     }
