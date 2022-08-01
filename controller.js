@@ -45,7 +45,8 @@ function renderDSNV(nvArr) {
       }')" class='btn btn-danger'>Xóa</button></td>
       <td><button onclick="suaNhanVien('${
         nv.taiKhoan
-      }');" class='btn btn-warning'>Sửa</button></td>
+      }');" class='btn btn-warning' data-toggle="modal"
+      data-target="#myModal" >Sửa</button></td>
       </tr>`;
     //   <td>${nv.tongLuong()}</td>
     //   <td>${nv.xepLoai()}</td>
@@ -58,6 +59,10 @@ function renderDSNV(nvArr) {
 //**FUNC Close form */
 function closeForm(id) {
   $(document.getElementById(id)).attr("data-dismiss", "modal");
+}
+//**FUNC Open form */
+function openForm(id) {
+  $(document.getElementById(id)).attr("data-toggle", "modal");
 }
 //**FUNC kiểm tra valid */
 function checkIsValid(nv) {
@@ -159,4 +164,22 @@ function timKiemViTri(taiKhoan, dsnv) {
   }
   // Nếu nv.ma != taiKhoan trả về giá trị -1
   return -1;
+}
+// FUNCTION disable ô input và btn
+function togDisable(id) {
+  document.getElementById(id).disabled = true;
+}
+function togEnable(id) {
+  document.getElementById(id).disabled = false;
+}
+//**FUNCTION show thông tin */
+function showThongTin(nv) {
+  document.getElementById("tknv").value = nv.taiKhoan;
+  document.getElementById("name").value = nv.ten;
+  document.getElementById("email").value = nv.email;
+  document.getElementById("password").value = nv.matKhau;
+  document.getElementById("datepicker").value = nv.date;
+  document.getElementById("luongCB").value = nv.luong;
+  document.getElementById("chucvu").value = nv.chucVu;
+  document.getElementById("gioLam").value = nv.gioLam;
 }

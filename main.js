@@ -72,3 +72,19 @@ function xoaNhanVien(taiKhoan) {
     localStorage.setItem("DSNV", dsnvJson);
   }
 }
+//FUNCTION** Sửa sinh viên
+//Show thông tin lên form - cho phép sửa + cập nhật
+function suaNhanVien(taiKhoan) {
+  openForm("btnThemNV");
+  //Tìm index của sv trong mảng dssv
+  var index = timKiemViTri(taiKhoan, dsnv);
+  console.log("index: ", index);
+  //Nếu tìm thấy (index != -1) thì show thông tin lên form
+  if (index != -1) {
+    var nv = dsnv[index];
+    showThongTin(nv);
+    togDisable("tknv");
+    togDisable("btnThemNV");
+    togEnable("btnCapNhat");
+  }
+}
