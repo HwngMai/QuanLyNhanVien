@@ -209,6 +209,7 @@ function timKiemXepLoai(xepLoaiCanTim, dsnvCanTim) {
   // Nếu nv.ma != taiKhoan trả về giá trị -1
   return nvXepLoaiArr;
 }
+//FUNCTION render xếp loại nv
 function renderDSNVxepLoai(nvXepLoaiArr) {
   // Tạo biến chứa giá trị HTML
   var contentHTML = "";
